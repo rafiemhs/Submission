@@ -15,7 +15,7 @@ st.write(data.head())
 
 # Sidebar Menu
 st.sidebar.title("Dashboard Analisis Data")
-menu = st.sidebar.radio("Pilih Analisis:", ["Overview", "Pola Pembelian", "Distribusi Geografis", "RFM Analysis"])
+menu = st.sidebar.radio("Pilih Analisis:", ["Overview", "Pola Pembelian", "Distribusi Geografis"])
 
 # Overview
 if menu == "Overview":
