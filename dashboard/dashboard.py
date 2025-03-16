@@ -3,12 +3,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load dataset
+
 @st.cache_data
 def load_data():
-    return pd.read_csv("main_data.csv")
+    file_id = "1IvXYeUe3quFHBHlkd2PGy-bY_dQ3SkJp" 
+    url = f"https://drive.google.com/uc?id={file_id}"
+    return pd.read_csv(url)
 
 data = load_data()
+st.write(data.head())
 
 # Sidebar Menu
 st.sidebar.title("Dashboard Analisis Data")
