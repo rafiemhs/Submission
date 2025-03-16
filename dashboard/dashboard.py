@@ -4,18 +4,28 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
+# Fungsi untuk membaca data utama dari Google Drive
 @st.cache_data
-def load_data():
-    file_id = "1IvXYeUe3quFHBHlkd2PGy-bY_dQ3SkJp" 
+def load_main_data():
+    file_id = "1IvXYeUe3quFHBHlkd2PGy-bY_dQ3SkJp"  # Ganti dengan ID file utama
     url = f"https://drive.google.com/uc?id={file_id}"
     return pd.read_csv(url)
 
-data = load_data()
-st.write(data.head())
+
+# Fungsi untuk membaca data RFM dari Google Drive
+@st.cache_data
+def load_rfm_data():
+    file_id = "1EkrihfkYyqp6B6yPgvqPgZAb4qWdcIoN"  # Ganti dengan ID file RFM
+    url = f"https://drive.google.com/uc?id={file_id}"
+    return pd.read_csv(url)
+
+
+# Load Data
+data = load_main_data()
 
 # Sidebar Menu
 st.sidebar.title("Dashboard Analisis Data")
-menu = st.sidebar.radio("Pilih Analisis:", ["Overview", "Pola Pembelian", "Distribusi Geografis"])
+menu = st.sidebar.radio("Pilih Analisis:", ["Overview", "Pola Pembelian", "Distribusi Geografis", "RFM Analysis"])
 
 # Overview
 if menu == "Overview":
@@ -48,26 +58,11 @@ elif menu == "Distribusi Geografis":
     st.pyplot(fig)
 
 # RFM Analysis
-@st.cache_data
-def load_data():
-    file_id = "1EkrihfkYyqp6B6yPgvqPgZAb4qWdcIoN" 
-    url = f"https://drive.google.com/uc?id={file_id}"
-    return pd.read_csv(url)
-
-# Simulasi menu di Streamlit
-menu = st.sidebar.selectbox("Pilih Menu", ["Home", "RFM Analysis"])
-
-# Home
-if menu == "Home":
-    st.title("📊 Dashboard Analisis")
-    st.write("Selamat datang di dashboard analisis!")
-
-# RFM Analysis Menu
 elif menu == "RFM Analysis":
     st.title("📊 RFM Analysis")
 
-    # Load Data
-    rfm = load_data()
+    # Load Data RFM
+    rfm = load_rfm_data()
     st.write("## 📌 Data RFM")
     st.write(rfm.head())
 
