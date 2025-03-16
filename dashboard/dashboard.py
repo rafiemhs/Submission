@@ -48,24 +48,43 @@ elif menu == "Distribusi Geografis":
     st.pyplot(fig)
 
 # RFM Analysis
+@st.cache_data
+def load_data():
+    file_id = "1EkrihfkYyqp6B6yPgvqPgZAb4qWdcIoN" 
+    url = f"https://drive.google.com/uc?id={file_id}"
+    return pd.read_csv(url)
+
+# Simulasi menu di Streamlit
+menu = st.sidebar.selectbox("Pilih Menu", ["Home", "RFM Analysis"])
+
+# Home
+if menu == "Home":
+    st.title("📊 Dashboard Analisis")
+    st.write("Selamat datang di dashboard analisis!")
+
+# RFM Analysis Menu
 elif menu == "RFM Analysis":
-    st.title("📈 RFM Analysis")
-    
-    rfm = pd.read_csv("rfm_analysis.csv")
-    st.write("### Data RFM")
+    st.title("📊 RFM Analysis")
+
+    # Load Data
+    rfm = load_data()
+    st.write("## 📌 Data RFM")
     st.write(rfm.head())
-    
-    st.write("### Distribusi Recency")
+
+    # Distribusi Recency
+    st.write("### 📌 Distribusi Recency")
     fig, ax = plt.subplots(figsize=(10, 5))
     sns.histplot(rfm["Recency"], bins=20, kde=True, ax=ax, color='green')
     st.pyplot(fig)
-    
-    st.write("### Distribusi Frequency")
+
+    # Distribusi Frequency
+    st.write("### 📌 Distribusi Frequency")
     fig, ax = plt.subplots(figsize=(10, 5))
     sns.histplot(rfm["Frequency"], bins=20, kde=True, ax=ax, color='blue')
     st.pyplot(fig)
-    
-    st.write("### Distribusi Monetary")
+
+    # Distribusi Monetary
+    st.write("### 📌 Distribusi Monetary")
     fig, ax = plt.subplots(figsize=(10, 5))
     sns.histplot(rfm["Monetary"], bins=20, kde=True, ax=ax, color='red')
     st.pyplot(fig)
