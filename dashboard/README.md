@@ -26,7 +26,7 @@ pip install -r requirements.txt
 ### 2️⃣ Menjalankan Streamlit
 Gunakan perintah berikut untuk menjalankan dashboard:
 ```sh
-streamlit run app.py
+streamlit run dashboard.py
 ```
 
 ### 3️⃣ Mengakses Dashboard
