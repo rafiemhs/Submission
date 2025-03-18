@@ -14,7 +14,19 @@ Dashboard ini dibuat menggunakan **Streamlit** untuk menyajikan hasil analisis d
 ### 1️⃣ **Persyaratan**
 Pastikan Anda telah menginstal **Python 3.8+** dan pustaka berikut:
 ```bash
-pip install streamlit pandas plotly seaborn matplotlib
+pip install streamlit
+```
+```bash
+pip install pandas 
+```
+```bash
+pip install plotly
+```
+```bash
+pip install seaborn
+```
+```bash
+pip install matplotlib
 ```
 
 ### 2️⃣ **Clone Repository** (Opsional)
