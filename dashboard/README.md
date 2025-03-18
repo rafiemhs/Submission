@@ -1,50 +1,49 @@
-# 📊 Dashboard Interaktif dengan Streamlit
+# 📊 Dashboard Analisis Data
 
-Dashboard ini dibuat menggunakan **Streamlit** untuk menganalisis data e-commerce, termasuk pola pembelian pelanggan, distribusi geografis, dan analisis RFM.
+Dashboard ini dibuat menggunakan **Streamlit** untuk menyajikan hasil analisis data secara interaktif.
 
-## 📌 Fitur Utama
-- **Overview Data**: Menampilkan informasi dasar dan ringkasan statistik.
-- **Analisis Pola Pembelian**: Visualisasi kategori produk dengan pendapatan tertinggi.
-- **Analisis Geografis**: Distribusi pelanggan berdasarkan kota.
-- **Analisis RFM**: Klasifikasi pelanggan berdasarkan Recency, Frequency, dan Monetary.
+## 📌 Fitur Dashboard
+- **Overview**: Menampilkan ringkasan statistik data.
+- **Pola Pembelian**: Menganalisis kategori produk berdasarkan total pendapatan.
+- **Distribusi Geografis**: Melihat sebaran pelanggan berdasarkan kota.
+- **RFM Analysis**: Menganalisis pelanggan menggunakan model **Recency, Frequency, Monetary (RFM)**.
 
-## 📂 Struktur Direktori
-```
-📁 project-directory
-│── dashboard.py                # Script utama untuk menjalankan dashboard
-│── main_data.csv            # Data utama yang digunakan untuk analisis
-│── rfm_analysis.csv         # Hasil analisis RFM
-```
-
+---
 ## 🚀 Cara Menjalankan Dashboard
-### 1️⃣ Instalasi Dependensi
-Pastikan Python telah terinstal, lalu jalankan perintah berikut:
-```sh
-pip install -r requirements.txt
+
+### 1️⃣ **Persyaratan**
+Pastikan Anda telah menginstal **Python 3.8+** dan pustaka berikut:
+```bash
+pip install streamlit pandas plotly seaborn matplotlib
 ```
 
-### 2️⃣ Menjalankan Streamlit
-Gunakan perintah berikut untuk menjalankan dashboard:
-```sh
+### 2️⃣ **Clone Repository** (Opsional)
+Jika menggunakan Git:
+```bash
+git clone https://github.com/user/repository-name.git
+cd repository-name
+```
+
+### 3️⃣ **Menjalankan Dashboard**
+Gunakan perintah berikut di terminal atau command prompt:
+```bash
 streamlit run dashboard.py
 ```
 
-### 3️⃣ Mengakses Dashboard
-Setelah dijalankan, Streamlit akan memberikan URL lokal seperti:
+---
+## 📦 Struktur Proyek
 ```
-http://localhost:8501
+📂 project-directory
+├── 📄 dashboard.py  # Script utama Streamlit
+├── 📄 README.md     # Dokumentasi proyek
+├── 📄 rfm_analysis.csv # dataset rfm
+└── 📄 main_data.csv # dataset utama
 ```
-Buka URL tersebut di browser untuk melihat tampilan dashboard.
 
-## 🛠️ Requirements
-Dependensi proyek ini terdapat dalam **requirements.txt**, yang mencakup:
-```
-pandas
-streamlit
-matplotlib
-seaborn
-```
-Untuk menginstalnya secara manual, jalankan:
-```sh
-pip install pandas streamlit matplotlib seaborn
-```
+---
+## 🎯 Catatan
+- **Pastikan koneksi internet stabil** karena data diambil dari Google Drive.
+- Jika ingin menggunakan dataset lokal, ubah bagian pemuatan data dalam `dashboard.py`.
+
+Selamat mencoba! 🚀
+
