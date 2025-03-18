@@ -37,7 +37,7 @@ streamlit run dashboard.py
 ├── 📄 dashboard.py  # Script utama Streamlit
 ├── 📄 README.md     # Dokumentasi proyek
 ├── 📄 rfm_analysis.csv # dataset rfm
-└── 📄 main_data.csv # dataset utama
+└── (untuk main data dan rfm analysis dipanggil melalui drive, karena file terlalu besar)
 ```
 
 ---
