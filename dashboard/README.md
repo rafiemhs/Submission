@@ -35,6 +35,7 @@ streamlit run dashboard.py
 ```
 📂 project-directory
 ├── 📄 dashboard.py  # Script utama Streamlit
+├── 📄 requirements.txt  # dependencies atau pustaka (libraries) yang dibutuhkan
 ├── 📄 README.md     # Dokumentasi proyek
 ├── 📄 rfm_analysis.csv # dataset rfm
 └── (untuk main data dan rfm analysis dipanggil melalui drive, karena file terlalu besar)
